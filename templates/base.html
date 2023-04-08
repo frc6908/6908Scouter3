@@ -1,621 +1,627 @@
 <!DOCTYPE html>
 <html>
-    <style>
-        .center {
-          text-align: center;
-          /* border: 3px solid blue; */
-        }
-        </style>
-    <head>
-        <!-- <link rel="apple-touch-icon" sizes="57x57" href="//img1.wsimg.com/isteam/ip/8d115b9a-79f0-46c8-806f-5657a7028262/logo/9180a255-e63c-409f-b1c0-64e93c0743c6.png/:/rs=w:57,h:57,m"/> -->
-        <link rel="shortcut icon" href="//img1.wsimg.com/isteam/ip/8d115b9a-79f0-46c8-806f-5657a7028262/favicon/1278921f-3d33-4b8b-98a6-2eae928508da.png/:/rs=w:16,h:16,m" sizes="16x16"/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <!-- <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}"> -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>6908 Scouter</title>
-        <br>
-        <div class="content-section center">
+<style>
+    .center {
+        text-align: center;
+        /* border: 3px solid blue; */
+    }
+</style>
+<head>
+    <!-- <link rel="apple-touch-icon" sizes="57x57" href="//img1.wsimg.com/isteam/ip/8d115b9a-79f0-46c8-806f-5657a7028262/logo/9180a255-e63c-409f-b1c0-64e93c0743c6.png/:/rs=w:57,h:57,m"/> -->
+    <link rel="shortcut icon"
+          href="//img1.wsimg.com/isteam/ip/8d115b9a-79f0-46c8-806f-5657a7028262/favicon/1278921f-3d33-4b8b-98a6-2eae928508da.png/:/rs=w:16,h:16,m"
+          sizes="16x16"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6908 Scouter</title>
+    <br>
+    <div class="content-section center">
         <a href="https://6908scouter.ahanjaiswal.repl.co">Home</a>
-      </div>
-        <div class="center">
-            <h1 style="margin-top: 30px; color:blue;">Infuzed 6908 Scouting Application</h1>
-            <h2>Current Team: {{teamNum}}</h2>
+    </div>
+    <div class="center">
+        <h1 style="margin-top: 30px; color:blue;">Infuzed 6908 Scouting Application</h1>
+        <h2>Current Team: {{ teamNum }}</h2>
+    </div>
+</head>
+<body>
+<br>
+<h3 class="content-section center">Pit Scout Data</h3>
+<div class="content-section center">
+    <form method="POST" action="">
+        <div>
+            {{ pitscout.autoBalance.label }}
+            {{ pitscout.autoBalance }}
         </div>
-    </head>
-    <body>
-        <br>
-        <h3 class="content-section center">Pit Scout Data</h3>
-        <div class="content-section center">
-            <form method = "POST" action = "">
-                <div>
-                    {{ pitscout.autoBalance.label }}
-                    {{ pitscout.autoBalance }}
-                </div>
-                <div>
-                    {{ pitscout.coneIntake.label }}
-                    {{ pitscout.coneIntake }}
-                </div>
-                <div>
-                    {{ pitscout.cubeIntake.label }}
-                    {{ pitscout.cubeIntake }}
-                </div>
-                <div>
-                    {{ pitscout.typeOfAuton.label }}
-                    {{ pitscout.typeOfAuton }}
-                </div>
-                <div>
-                    {{ pitscout.extrapit.label }}
-                  <br>
-                    {{ pitscout.extrapit }}
-                </div>
-                <div>
-                    {{ pitscout.submitPit(class = "btn btn-primary") }}
-                </div>
-            </form>
+        <div>
+            {{ pitscout.coneIntake.label }}
+            {{ pitscout.coneIntake }}
         </div>
-        <br>
-        <h3 class="content-section center">Match 1 Data: {{ teamnums[0] }}</h3>
-        <div class="content-section center">
-            <form method = "POST" action = "">
-                <div>
-                    {{ form1.autonPoints.label() }}
-                    {{ form1.autonPoints }}
-                </div>
-                <div>
-                    {{ form1.conesPlaced.label() }}
-                    {{ form1.conesPlaced }}
-                </div>
-                <div>
-                    {{ form1.boxesPlaced.label() }}
-                    {{ form1.boxesPlaced }}
-                </div>
-                <div>
-                    {{ form1.numOfLinks.label}}
-                    {{ form1.numOfLinks }}
-                </div>
-                <div>
-                    {{ form1.coopGrid.label }}
-                    {{ form1.coopGrid }}
-                </div>
-                <div>
-                    {{ form1.balanced.label }}
-                    {{ form1.balanced }}
-                </div>
-                <div>
-                    {{ form1.extra.label() }}
-                    <br>
-                    {{ form1.extra }}
-                </div>
-                <div>
-                    {{ form1.submit(class = "btn btn-primary") }}
-                </div>
-            </form>
+        <div>
+            {{ pitscout.cubeIntake.label }}
+            {{ pitscout.cubeIntake }}
         </div>
-        <br>
-        <h3 class="content-section center">Match 2 Data: {{ teamnums[1] }}</h3>
-        <div class="content-section center">
-            <form method = "POST" action = "">
-                <div>
-                    {{ form2.autonPoints2.label() }}
-                    {{ form2.autonPoints2 }}
-                </div>
-                <div>
-                    {{ form2.conesPlaced2.label() }}
-                    {{ form2.conesPlaced2 }}
-                </div>
-                <div>
-                    {{ form2.boxesPlaced2.label() }}
-                    {{ form2.boxesPlaced2 }}
-                </div>
-                <div>
-                    {{ form2.numOfLinks2.label}}
-                    {{ form2.numOfLinks2 }}
-                </div>
-                <div>
-                    {{ form2.coopGrid2.label }}
-                    {{ form2.coopGrid2 }}
-                </div>
-                <div>
-                    {{ form2.balanced2.label }}
-                    {{ form2.balanced2 }}
-                </div>
-                <div>
-                    {{ form2.extra2.label() }}
-                    <br>
-                    {{ form2.extra2 }}
-                </div>
-                <div>
-                    {{ form2.submit2(class = "btn btn-primary") }}
-                </div>
-            </form>
+        <div>
+            {{ pitscout.typeOfAuton.label }}
+            {{ pitscout.typeOfAuton }}
         </div>
-        <br>
-        <h3 class="content-section center">Match 3 Data: {{ teamnums[2] }}</h3>
-        <div class="content-section center">
-          <form method = "POST" action = "">
-              <div>
-                  {{ form3.autonPoints3.label() }}
-                  {{ form3.autonPoints3 }}
-              </div>
-              <div>
-                  {{ form3.conesPlaced3.label() }}
-                  {{ form3.conesPlaced3 }}
-              </div>
-              <div>
-                  {{ form3.boxesPlaced3.label() }}
-                  {{ form3.boxesPlaced3 }}
-              </div>
-              <div>
-                  {{ form3.numOfLinks3.label}}
-                  {{ form3.numOfLinks3 }}
-              </div>
-              <div>
-                  {{ form3.coopGrid3.label }}
-                  {{ form3.coopGrid3 }}
-              </div>
-              <div>
-                  {{ form3.balanced3.label }}
-                  {{ form3.balanced3 }}
-              </div>
-              <div>
-                  {{ form3.extra3.label() }}
-                  <br>
-                  {{ form3.extra3 }}
-              </div>
-              <div>
-                  {{ form3.submit3(class = "btn btn-primary") }}
-              </div>
-            </form>
-        <br>
+        <div>
+            {{ pitscout.extrapit.label }}
+            <br>
+            {{ pitscout.extrapit }}
         </div>
-        <h3 class="content-section center">Match 4 Data: {{ teamnums[3] }}</h3>
-        <div class="content-section center">
-            <form method = "POST" action = "">
-                <div>
-                    {{ form4.autonPoints4.label() }}
-                    {{ form4.autonPoints4 }}
-                </div>
-                <div>
-                    {{ form4.conesPlaced4.label() }}
-                    {{ form4.conesPlaced4 }}
-                </div>
-                <div>
-                    {{ form4.boxesPlaced4.label() }}
-                    {{ form4.boxesPlaced4 }}
-                </div>
-                <div>
-                    {{ form4.numOfLinks4.label}}
-                    {{ form4.numOfLinks4 }}
-                </div>
-                <div>
-                    {{ form4.coopGrid4.label }}
-                    {{ form4.coopGrid4 }}
-                </div>
-                <div>
-                    {{ form4.balanced4.label }}
-                    {{ form4.balanced4 }}
-                </div>
-                <div>
-                    {{ form4.extra4.label() }}
-                    <br>
-                    {{ form4.extra4 }}
-                </div>
-                <div>
-                    {{ form4.submit4(class = "btn btn-primary") }}
-                </div>
-            </form>
+        <div>
+            {{ pitscout.submitPit(class = "btn btn-primary") }}
         </div>
-        <br>
-        <h3 class="content-section center">Match 5 Data: {{ teamnums[4] }}</h3>
-        <div class="content-section center">
-            <form method = "POST" action = "">
-                <div>
-                    {{ form5.autonPoints5.label() }}
-                    {{ form5.autonPoints5 }}
-                </div>
-                <div>
-                    {{ form5.conesPlaced5.label() }}
-                    {{ form5.conesPlaced5 }}
-                </div>
-                <div>
-                    {{ form5.boxesPlaced5.label() }}
-                    {{ form5.boxesPlaced5 }}
-                </div>
-                <div>
-                    {{ form5.numOfLinks5.label}}
-                    {{ form5.numOfLinks5 }}
-                </div>
-                <div>
-                    {{ form5.coopGrid5.label }}
-                    {{ form5.coopGrid5 }}
-                </div>
-                <div>
-                    {{ form5.balanced5.label }}
-                    {{ form5.balanced5 }}
-                </div>
-                <div>
-                    {{ form5.extra5.label() }}
-                    <br>
-                    {{ form5.extra5 }}
-                </div>
-                <div>
-                    {{ form5.submit5(class = "btn btn-primary") }}
-                </div>
-            </form>
-        </div>
-        <h3 class="content-section center">Match 6 Data: {{ teamnums[5] }}</h3>
-        <div class="content-section center">
-            <form method = "POST" action = "">
-                <div>
-                    {{ form6.autonPoints6.label() }}
-                    {{ form6.autonPoints6 }}
-                </div>
-                <div>
-                    {{ form6.conesPlaced6.label() }}
-                    {{ form6.conesPlaced6 }}
-                </div>
-                <div>
-                    {{ form6.boxesPlaced6.label() }}
-                    {{ form6.boxesPlaced6 }}
-                </div>
-                <div>
-                    {{ form6.numOfLinks6.label}}
-                    {{ form6.numOfLinks6 }}
-                </div>
-                <div>
-                    {{ form6.coopGrid6.label }}
-                    {{ form6.coopGrid6 }}
-                </div>
-                <div>
-                    {{ form6.balanced6.label }}
-                    {{ form6.balanced6 }}
-                </div>
-                <div>
-                    {{ form6.extra6.label() }}
-                    <br>
-                    {{ form6.extra6 }}
-                </div>
-                <div>
-                    {{ form6.submit6(class = "btn btn-primary") }}
-                </div>
-            </form>
-        </div>
-        <h3 class="content-section center">Match 7 Data: {{ teamnums[6] }}</h3>
-        <div class="content-section center">
-            <form method = "POST" action = "">
-                <div>
-                    {{ form7.autonPoints7.label() }}
-                    {{ form7.autonPoints7 }}
-                </div>
-                <div>
-                    {{ form7.conesPlaced7.label() }}
-                    {{ form7.conesPlaced7 }}
-                </div>
-                <div>
-                    {{ form7.boxesPlaced7.label() }}
-                    {{ form7.boxesPlaced7 }}
-                </div>
-                <div>
-                    {{ form7.numOfLinks7.label}}
-                    {{ form7.numOfLinks7 }}
-                </div>
-                <div>
-                    {{ form7.coopGrid7.label }}
-                    {{ form7.coopGrid7 }}
-                </div>
-                <div>
-                    {{ form7.balanced7.label }}
-                    {{ form7.balanced7 }}
-                </div>
-                <div>
-                    {{ form7.extra7.label() }}
-                    <br>
-                    {{ form7.extra7 }}
-                </div>
-                <div>
-                    {{ form7.submit7(class = "btn btn-primary") }}
-                </div>
-            </form>
-        </div>
-        <h3 class="content-section center">Match 8 Data: {{ teamnums[7] }}</h3>
-        <div class="content-section center">
-            <form method = "POST" action = "">
-                <div>
-                    {{ form8.autonPoints8.label() }}
-                    {{ form8.autonPoints8 }}
-                </div>
-                <div>
-                    {{ form8.conesPlaced8.label() }}
-                    {{ form8.conesPlaced8 }}
-                </div>
-                <div>
-                    {{ form8.boxesPlaced8.label() }}
-                    {{ form8.boxesPlaced8 }}
-                </div>
-                <div>
-                    {{ form8.numOfLinks8.label}}
-                    {{ form8.numOfLinks8 }}
-                </div>
-                <div>
-                    {{ form8.coopGrid8.label }}
-                    {{ form8.coopGrid8 }}
-                </div>
-                <div>
-                    {{ form8.balanced8.label }}
-                    {{ form8.balanced8 }}
-                </div>
-                <div>
-                    {{ form8.extra8.label() }}
-                    <br>
-                    {{ form8.extra8 }}
-                </div>
-                <div>
-                    {{ form8.submit8(class = "btn btn-primary") }}
-                </div>
-            </form>
-        </div>
-        <h3 class="content-section center">Match 9 Data: {{ teamnums[8] }}</h3>
-        <div class="content-section center">
-            <form method = "POST" action = "">
-                <div>
-                    {{ form9.autonPoints9.label() }}
-                    {{ form9.autonPoints9 }}
-                </div>
-                <div>
-                    {{ form9.conesPlaced9.label() }}
-                    {{ form9.conesPlaced9 }}
-                </div>
-                <div>
-                    {{ form9.boxesPlaced9.label() }}
-                    {{ form9.boxesPlaced9 }}
-                </div>
-                <div>
-                    {{ form9.numOfLinks9.label}}
-                    {{ form9.numOfLinks9 }}
-                </div>
-                <div>
-                    {{ form9.coopGrid9.label }}
-                    {{ form9.coopGrid9 }}
-                </div>
-                <div>
-                    {{ form9.balanced9.label }}
-                    {{ form9.balanced9 }}
-                </div>
-                <div>
-                    {{ form9.extra9.label() }}
-                    <br>
-                    {{ form9.extra9 }}
-                </div>
-                <div>
-                    {{ form9.submit9(class = "btn btn-primary") }}
-                </div>
-            </form>
-        </div>
-        <h3 class="content-section center">Match 10 Data: {{ teamnums[9] }}</h3>
-        <div class="content-section center">
-            <form method = "POST" action = "">
-                <div>
-                    {{ form10.autonPoints10.label() }}
-                    {{ form10.autonPoints10 }}
-                </div>
-                <div>
-                    {{ form10.conesPlaced10.label() }}
-                    {{ form10.conesPlaced10 }}
-                </div>
-                <div>
-                    {{ form10.boxesPlaced10.label() }}
-                    {{ form10.boxesPlaced10 }}
-                </div>
-                <div>
-                    {{ form10.numOfLinks10.label}}
-                    {{ form10.numOfLinks10 }}
-                </div>
-                <div>
-                    {{ form10.coopGrid10.label }}
-                    {{ form10.coopGrid10 }}
-                </div>
-                <div>
-                    {{ form10.balanced10.label }}
-                    {{ form10.balanced10 }}
-                </div>
-                <div>
-                    {{ form10.extra10.label() }}
-                    <br>
-                    {{ form10.extra10 }}
-                </div>
-                <div>
-                    {{ form10.submit10(class = "btn btn-primary") }}
-                </div>
-            </form>
-        </div>
-        <h3 class="content-section center">Match 11 Data: {{ teamnums[10] }}</h3>
-        <div class="content-section center">
-            <form method = "POST" action = "">
-                <div>
-                    {{ form11.autonPoints11.label() }}
-                    {{ form11.autonPoints11 }}
-                </div>
-                <div>
-                    {{ form11.conesPlaced11.label() }}
-                    {{ form11.conesPlaced11 }}
-                </div>
-                <div>
-                    {{ form11.boxesPlaced11.label() }}
-                    {{ form11.boxesPlaced11 }}
-                </div>
-                <div>
-                    {{ form11.numOfLinks11.label}}
-                    {{ form11.numOfLinks11 }}
-                </div>
-                <div>
-                    {{ form11.coopGrid11.label }}
-                    {{ form11.coopGrid11 }}
-                </div>
-                <div>
-                    {{ form11.balanced11.label }}
-                    {{ form11.balanced11 }}
-                </div>
-                <div>
-                    {{ form11.extra11.label() }}
-                    <br>
-                    {{ form11.extra11 }}
-                </div>
-                <div>
-                    {{ form11.submit11(class = "btn btn-primary") }}
-                </div>
-            </form>
-        </div>
-        <h3 class="content-section center">Match 12 Data: {{ teamnums[11] }}</h3>
-        <div class="content-section center">
-            <form method = "POST" action = "">
-                <div>
-                    {{ form12.autonPoints12.label() }}
-                    {{ form12.autonPoints12 }}
-                </div>
-                <div>
-                    {{ form12.conesPlaced12.label() }}
-                    {{ form12.conesPlaced12 }}
-                </div>
-                <div>
-                    {{ form12.boxesPlaced12.label() }}
-                    {{ form12.boxesPlaced12 }}
-                </div>
-                <div>
-                    {{ form12.numOfLinks12.label}}
-                    {{ form12.numOfLinks12 }}
-                </div>
-                <div>
-                    {{ form12.coopGrid12.label }}
-                    {{ form12.coopGrid12 }}
-                </div>
-                <div>
-                    {{ form12.balanced12.label }}
-                    {{ form12.balanced12 }}
-                </div>
-                <div>
-                    {{ form12.extra12.label() }}
-                    <br>
-                    {{ form12.extra12 }}
-                </div>
-                <div>
-                    {{ form12.submit12(class = "btn btn-primary") }}
-                </div>
-            </form>
-        </div>
-        <h3 class="content-section center">Match 13 Data: {{ teamnums[12] }}</h3>
-        <div class="content-section center">
-            <form method = "POST" action = "">
-                <div>
-                    {{ form13.autonPoints13.label() }}
-                    {{ form13.autonPoints13 }}
-                </div>
-                <div>
-                    {{ form13.conesPlaced13.label() }}
-                    {{ form13.conesPlaced13 }}
-                </div>
-                <div>
-                    {{ form13.boxesPlaced13.label() }}
-                    {{ form13.boxesPlaced13 }}
-                </div>
-                <div>
-                    {{ form13.numOfLinks13.label}}
-                    {{ form13.numOfLinks13 }}
-                </div>
-                <div>
-                    {{ form13.coopGrid13.label }}
-                    {{ form13.coopGrid13 }}
-                </div>
-                <div>
-                    {{ form13.balanced13.label }}
-                    {{ form13.balanced13 }}
-                </div>
-                <div>
-                    {{ form13.extra13.label() }}
-                    <br>
-                    {{ form13.extra13 }}
-                </div>
-                <div>
-                    {{ form13.submit13(class = "btn btn-primary") }}
-                </div>
-            </form>
-        </div>
-        <h3 class="content-section center">Match 14 Data: {{ teamnums[13] }}</h3>
-        <div class="content-section center">
-            <form method = "POST" action = "">
-                <div>
-                    {{ form14.autonPoints14.label() }}
-                    {{ form14.autonPoints14 }}
-                </div>
-                <div>
-                    {{ form14.conesPlaced14.label() }}
-                    {{ form14.conesPlaced14 }}
-                </div>
-                <div>
-                    {{ form14.boxesPlaced14.label() }}
-                    {{ form14.boxesPlaced14 }}
-                </div>
-                <div>
-                    {{ form14.numOfLinks14.label}}
-                    {{ form14.numOfLinks14 }}
-                </div>
-                <div>
-                    {{ form14.coopGrid14.label }}
-                    {{ form14.coopGrid14 }}
-                </div>
-                <div>
-                    {{ form14.balanced14.label }}
-                    {{ form14.balanced14 }}
-                </div>
-                <div>
-                    {{ form14.extra14.label() }}
-                    <br>
-                    {{ form14.extra14 }}
-                </div>
-                <div>
-                    {{ form14.submit14(class = "btn btn-primary") }}
-                </div>
-            </form>
-        </div>
-        <h3 class="content-section center">Match 15 Data: {{ teamnums[14] }}</h3>
-        <div class="content-section center">
-            <form method = "POST" action = "">
-                <div>
-                    {{ form15.autonPoints15.label() }}
-                    {{ form15.autonPoints15 }}
-                </div>
-                <div>
-                    {{ form15.conesPlaced15.label() }}
-                    {{ form15.conesPlaced15 }}
-                </div>
-                <div>
-                    {{ form15.boxesPlaced15.label() }}
-                    {{ form15.boxesPlaced15 }}
-                </div>
-                <div>
-                    {{ form15.numOfLinks15.label}}
-                    {{ form15.numOfLinks15 }}
-                </div>
-                <div>
-                    {{ form15.coopGrid15.label }}
-                    {{ form15.coopGrid15 }}
-                </div>
-                <div>
-                    {{ form15.balanced15.label }}
-                    {{ form15.balanced15 }}
-                </div>
-                <div>
-                    {{ form15.extra15.label() }}
-                    <br>
-                    {{ form15.extra15 }}
-                </div>
-                <div>
-                    {{ form15.submit15(class = "btn btn-primary") }}
-                </div>
-            </form>
-        </div>
-      <div class="content-section center">
-        <a href="https://6908scouter.ahanjaiswal.repl.com">Home</a>
-      </div>
-      <br>
-    </body>
+    </form>
+</div>
+<br>
+{% for i in range(0, 14) %}
+    <h3 class="content-section center">Match {{ i + 1 }} Data: {{ teamnums[i] }}</h3>
+    <div class="content-section center">
+        <form method="POST" action="">
+            <div>
+                {{ form[i].autonPoints.label() }}
+                {{ form[i].autonPoints }}
+            </div>
+            <div>
+                {{ form[i].conesPlaced.label() }}
+                {{ form[i].conesPlaced }}
+            </div>
+            <div>
+                {{ form[i].boxesPlaced.label() }}
+                {{ form[i].boxesPlaced }}
+            </div>
+            <div>
+                {{ form[i].numOfLinks.label }}
+                {{ form[i].numOfLinks }}
+            </div>
+            <div>
+                {{ form[i].coopGrid.label }}
+                {{ form[i].coopGrid }}
+            </div>
+            <div>
+                {{ form[i].balanced.label }}
+                {{ form[i].balanced }}
+            </div>
+            <div>
+                {{ form[i].extra.label() }}
+                <br>
+                {{ form[i].extra }}
+            </div>
+            <div>
+                {{ form[i].submit(class = "btn btn-primary") }}
+            </div>
+        </form>
+    </div>
+    <br>
+{% endfor %}
+
+{#<h3 class="content-section center">Match 2 Data: {{ teamnums[1] }}</h3>#}
+{#<div class="content-section center">#}
+{#    <form method="POST" action="">#}
+{#        <div>#}
+{#            {{ form2.autonPoints.label() }}#}
+{#            {{ form2.autonPoints }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form2.conesPlaced.label() }}#}
+{#            {{ form2.conesPlaced }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form2.boxesPlaced.label() }}#}
+{#            {{ form2.boxesPlaced }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form2.numOfLinks.label }}#}
+{#            {{ form2.numOfLinks }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form2.coopGrid.label }}#}
+{#            {{ form2.coopGrid }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form2.balanced.label }}#}
+{#            {{ form2.balanced }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form2.extra.label() }}#}
+{#            <br>#}
+{#            {{ form2.extra }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form2.submit(class = "btn btn-primary") }}#}
+{#        </div>#}
+{#    </form>#}
+{#</div>#}
+{#<br>#}
+{#<h3 class="content-section center">Match 3 Data: {{ teamnums[2] }}</h3>#}
+{#<div class="content-section center">#}
+{#    <form method="POST" action="">#}
+{#        <div>#}
+{#            {{ form3.autonPoints.label() }}#}
+{#            {{ form3.autonPoints }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form3.conesPlaced.label() }}#}
+{#            {{ form3.conesPlaced }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form3.boxesPlaced.label() }}#}
+{#            {{ form3.boxesPlaced }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form3.numOfLinks.label }}#}
+{#            {{ form3.numOfLinks }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form3.coopGrid.label }}#}
+{#            {{ form3.coopGrid }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form3.balanced.label }}#}
+{#            {{ form3.balanced }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form3.extra.label() }}#}
+{#            <br>#}
+{#            {{ form3.extra }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form3.submit(class = "btn btn-primary") }}#}
+{#        </div>#}
+{#    </form>#}
+{#    <br>#}
+{#</div>#}
+{#<h3 class="content-section center">Match 4 Data: {{ teamnums[3] }}</h3>#}
+{#<div class="content-section center">#}
+{#    <form method="POST" action="">#}
+{#        <div>#}
+{#            {{ form4.autonPoints.label() }}#}
+{#            {{ form4.autonPoints }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form4.conesPlaced.label() }}#}
+{#            {{ form4.conesPlaced }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form4.boxesPlaced.label() }}#}
+{#            {{ form4.boxesPlaced }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form4.numOfLinks.label }}#}
+{#            {{ form4.numOfLinks }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form4.coopGrid.label }}#}
+{#            {{ form4.coopGrid }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form4.balanced.label }}#}
+{#            {{ form4.balanced }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form4.extra.label() }}#}
+{#            <br>#}
+{#            {{ form4.extra }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form4.submit(class = "btn btn-primary") }}#}
+{#        </div>#}
+{#    </form>#}
+{#</div>#}
+{#<br>#}
+{#<h3 class="content-section center">Match 5 Data: {{ teamnums[4] }}</h3>#}
+{#<div class="content-section center">#}
+{#    <form method="POST" action="">#}
+{#        <div>#}
+{#            {{ form5.autonPoints.label() }}#}
+{#            {{ form5.autonPoints }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form5.conesPlaced.label() }}#}
+{#            {{ form5.conesPlaced }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form5.boxesPlaced.label() }}#}
+{#            {{ form5.boxesPlaced }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form5.numOfLinks.label }}#}
+{#            {{ form5.numOfLinks }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form5.coopGrid.label }}#}
+{#            {{ form5.coopGrid }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form5.balanced.label }}#}
+{#            {{ form5.balanced }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form5.extra5.label() }}#}
+{#            <br>#}
+{#            {{ form5.extra5 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form5.submit5(class = "btn btn-primary") }}#}
+{#        </div>#}
+{#    </form>#}
+{#</div>#}
+{#<h3 class="content-section center">Match 6 Data: {{ teamnums[5] }}</h3>#}
+{#<div class="content-section center">#}
+{#    <form method="POST" action="">#}
+{#        <div>#}
+{#            {{ form6.autonPoints6.label() }}#}
+{#            {{ form6.autonPoints6 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form6.conesPlaced6.label() }}#}
+{#            {{ form6.conesPlaced6 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form6.boxesPlaced6.label() }}#}
+{#            {{ form6.boxesPlaced6 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form6.numOfLinks6.label }}#}
+{#            {{ form6.numOfLinks6 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form6.coopGrid6.label }}#}
+{#            {{ form6.coopGrid6 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form6.balanced6.label }}#}
+{#            {{ form6.balanced6 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form6.extra6.label() }}#}
+{#            <br>#}
+{#            {{ form6.extra6 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form6.submit6(class = "btn btn-primary") }}#}
+{#        </div>#}
+{#    </form>#}
+{#</div>#}
+{#<h3 class="content-section center">Match 7 Data: {{ teamnums[6] }}</h3>#}
+{#<div class="content-section center">#}
+{#    <form method="POST" action="">#}
+{#        <div>#}
+{#            {{ form7.autonPoints7.label() }}#}
+{#            {{ form7.autonPoints7 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form7.conesPlaced7.label() }}#}
+{#            {{ form7.conesPlaced7 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form7.boxesPlaced7.label() }}#}
+{#            {{ form7.boxesPlaced7 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form7.numOfLinks7.label }}#}
+{#            {{ form7.numOfLinks7 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form7.coopGrid7.label }}#}
+{#            {{ form7.coopGrid7 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form7.balanced7.label }}#}
+{#            {{ form7.balanced7 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form7.extra7.label() }}#}
+{#            <br>#}
+{#            {{ form7.extra7 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form7.submit7(class = "btn btn-primary") }}#}
+{#        </div>#}
+{#    </form>#}
+{#</div>#}
+{#<h3 class="content-section center">Match 8 Data: {{ teamnums[7] }}</h3>#}
+{#<div class="content-section center">#}
+{#    <form method="POST" action="">#}
+{#        <div>#}
+{#            {{ form8.autonPoints8.label() }}#}
+{#            {{ form8.autonPoints8 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form8.conesPlaced8.label() }}#}
+{#            {{ form8.conesPlaced8 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form8.boxesPlaced8.label() }}#}
+{#            {{ form8.boxesPlaced8 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form8.numOfLinks8.label }}#}
+{#            {{ form8.numOfLinks8 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form8.coopGrid8.label }}#}
+{#            {{ form8.coopGrid8 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form8.balanced8.label }}#}
+{#            {{ form8.balanced8 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form8.extra8.label() }}#}
+{#            <br>#}
+{#            {{ form8.extra8 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form8.submit8(class = "btn btn-primary") }}#}
+{#        </div>#}
+{#    </form>#}
+{#</div>#}
+{#<h3 class="content-section center">Match 9 Data: {{ teamnums[8] }}</h3>#}
+{#<div class="content-section center">#}
+{#    <form method="POST" action="">#}
+{#        <div>#}
+{#            {{ form9.autonPoints9.label() }}#}
+{#            {{ form9.autonPoints9 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form9.conesPlaced9.label() }}#}
+{#            {{ form9.conesPlaced9 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form9.boxesPlaced9.label() }}#}
+{#            {{ form9.boxesPlaced9 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form9.numOfLinks9.label }}#}
+{#            {{ form9.numOfLinks9 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form9.coopGrid9.label }}#}
+{#            {{ form9.coopGrid9 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form9.balanced9.label }}#}
+{#            {{ form9.balanced9 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form9.extra9.label() }}#}
+{#            <br>#}
+{#            {{ form9.extra9 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form9.submit9(class = "btn btn-primary") }}#}
+{#        </div>#}
+{#    </form>#}
+{#</div>#}
+{#<h3 class="content-section center">Match 10 Data: {{ teamnums[9] }}</h3>#}
+{#<div class="content-section center">#}
+{#    <form method="POST" action="">#}
+{#        <div>#}
+{#            {{ form10.autonPoints10.label() }}#}
+{#            {{ form10.autonPoints10 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form10.conesPlaced10.label() }}#}
+{#            {{ form10.conesPlaced10 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form10.boxesPlaced10.label() }}#}
+{#            {{ form10.boxesPlaced10 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form10.numOfLinks10.label }}#}
+{#            {{ form10.numOfLinks10 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form10.coopGrid10.label }}#}
+{#            {{ form10.coopGrid10 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form10.balanced10.label }}#}
+{#            {{ form10.balanced10 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form10.extra10.label() }}#}
+{#            <br>#}
+{#            {{ form10.extra10 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form10.submit10(class = "btn btn-primary") }}#}
+{#        </div>#}
+{#    </form>#}
+{#</div>#}
+{#<h3 class="content-section center">Match 11 Data: {{ teamnums[10] }}</h3>#}
+{#<div class="content-section center">#}
+{#    <form method="POST" action="">#}
+{#        <div>#}
+{#            {{ form11.autonPoints11.label() }}#}
+{#            {{ form11.autonPoints11 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form11.conesPlaced11.label() }}#}
+{#            {{ form11.conesPlaced11 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form11.boxesPlaced11.label() }}#}
+{#            {{ form11.boxesPlaced11 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form11.numOfLinks11.label }}#}
+{#            {{ form11.numOfLinks11 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form11.coopGrid11.label }}#}
+{#            {{ form11.coopGrid11 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form11.balanced11.label }}#}
+{#            {{ form11.balanced11 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form11.extra11.label() }}#}
+{#            <br>#}
+{#            {{ form11.extra11 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form11.submit11(class = "btn btn-primary") }}#}
+{#        </div>#}
+{#    </form>#}
+{#</div>#}
+{#<h3 class="content-section center">Match 12 Data: {{ teamnums[11] }}</h3>#}
+{#<div class="content-section center">#}
+{#    <form method="POST" action="">#}
+{#        <div>#}
+{#            {{ form12.autonPoints12.label() }}#}
+{#            {{ form12.autonPoints12 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form12.conesPlaced12.label() }}#}
+{#            {{ form12.conesPlaced12 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form12.boxesPlaced12.label() }}#}
+{#            {{ form12.boxesPlaced12 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form12.numOfLinks12.label }}#}
+{#            {{ form12.numOfLinks12 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form12.coopGrid12.label }}#}
+{#            {{ form12.coopGrid12 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form12.balanced12.label }}#}
+{#            {{ form12.balanced12 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form12.extra12.label() }}#}
+{#            <br>#}
+{#            {{ form12.extra12 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form12.submit12(class = "btn btn-primary") }}#}
+{#        </div>#}
+{#    </form>#}
+{#</div>#}
+{#<h3 class="content-section center">Match 13 Data: {{ teamnums[12] }}</h3>#}
+{#<div class="content-section center">#}
+{#    <form method="POST" action="">#}
+{#        <div>#}
+{#            {{ form13.autonPoints13.label() }}#}
+{#            {{ form13.autonPoints13 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form13.conesPlaced13.label() }}#}
+{#            {{ form13.conesPlaced13 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form13.boxesPlaced13.label() }}#}
+{#            {{ form13.boxesPlaced13 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form13.numOfLinks13.label }}#}
+{#            {{ form13.numOfLinks13 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form13.coopGrid13.label }}#}
+{#            {{ form13.coopGrid13 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form13.balanced13.label }}#}
+{#            {{ form13.balanced13 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form13.extra13.label() }}#}
+{#            <br>#}
+{#            {{ form13.extra13 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form13.submit13(class = "btn btn-primary") }}#}
+{#        </div>#}
+{#    </form>#}
+{#</div>#}
+{#<h3 class="content-section center">Match 14 Data: {{ teamnums[13] }}</h3>#}
+{#<div class="content-section center">#}
+{#    <form method="POST" action="">#}
+{#        <div>#}
+{#            {{ form14.autonPointsR14.label() }}#}
+{#            {{ form14.autonPoints14 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form14.conesPlaced14.label() }}#}
+{#            {{ form14.conesPlaced14 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form14.boxesPlaced14.label() }}#}
+{#            {{ form14.boxesPlaced14 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form14.numOfLinks14.label }}#}
+{#            {{ form14.numOfLinks14 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form14.coopGrid14.label }}#}
+{#            {{ form14.coopGrid14 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form14.balanced14.label }}#}
+{#            {{ form14.balanced14 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form14.extra14.label() }}#}
+{#            <br>#}
+{#            {{ form14.extra14 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form14.submit14(class = "btn btn-primary") }}#}
+{#        </div>#}
+{#    </form>#}
+{#</div>#}
+{#<h3 class="content-section center">Match 15 Data: {{ teamnums[14] }}</h3>#}
+{#<div class="content-section center">#}
+{#    <form method="POST" action="">#}
+{#        <div>#}
+{#            {{ form15.autonPoints15.label() }}#}
+{#            {{ form15.autonPoints15 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form15.conesPlaced15.label() }}#}
+{#            {{ form15.conesPlaced15 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form15.boxesPlaced15.label() }}#}
+{#            {{ form15.boxesPlaced15 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form15.numOfLinks15.label }}#}
+{#            {{ form15.numOfLinks15 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form15.coopGrid15.label }}#}
+{#            {{ form15.coopGrid15 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form15.balanced15.label }}#}
+{#            {{ form15.balanced15 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form15.extra15.label() }}#}
+{#            <br>#}
+{#            {{ form15.extra15 }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form15.submit15(class = "btn btn-primary") }}#}
+{#        </div>#}
+{#    </form>#}
+{#</div>#}
+<div class="content-section center">
+    <a href="https://6908scouter.ahanjaiswal.repl.com">Home</a>
+</div>
+<br>
+</body>
 </html>
